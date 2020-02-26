@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, Button, TouchableOpacity } from 'react-native';
 import {NavigationContainer} from '@react-navigation/native'
 import {createStackNavigator} from '@react-navigation/stack' 
 
@@ -7,36 +7,63 @@ import {createStackNavigator} from '@react-navigation/stack'
 function Home({navigation}){
   return (
     <View style={styles.container}>
-      <View style={styles.buttonContainer}>
-        <Button
-          title="My Planned Improvements"
-          onPress={() => navigation.navigate("My Planned Improvements")}
-          />
-          <Button
-          title="Community"
-          onPress={() => navigation.navigate("Community")}
-          />
-          <Button
-          title="Indoor Air Quality"
-          onPress={() => navigation.navigate("Indoor Air Quality")}
-          />
-          <Button
-          title="Energry Efficiency"
-          onPress={() => navigation.navigate("Energy Efficiency")}
-          />
-          <Button
-          title="Resource Efficiency"
-          onPress={() => navigation.navigate("Resource Efficiency")}
-          />
-          <Button
-          title="Water Conservation"
-          onPress={() => navigation.navigate("Water Conservation")}
-          />
-          <Button
-          title="Finance Options"
-          onPress={() => navigation.navigate("Finance Options")}
-          />
-      </View>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => navigation.navigate("My Planned Improvements")}>
+          <Text style={styles.text}>My Planned Improvements</Text>
+        </TouchableOpacity>
+
+
+          <TouchableOpacity
+                    style={styles.button}
+
+          onPress={() => navigation.navigate("Community")}>
+            <Text style={styles.text}>Community</Text>
+
+          </TouchableOpacity>
+
+          
+          <TouchableOpacity
+                    style={styles.button}
+
+          onPress={() => navigation.navigate("Indoor Air Quality")}>
+            <Text style={styles.text}>Indoor Air Quality</Text>
+
+          </TouchableOpacity>
+
+
+          <TouchableOpacity
+                    style={styles.button}
+
+          onPress={() => navigation.navigate("Energy Efficiency")}>
+            <Text style={styles.text}>Energry Efficiency</Text>
+
+          </TouchableOpacity>
+          
+          <TouchableOpacity
+                    style={styles.button}
+
+          onPress={() => navigation.navigate("Resource Efficiency")}>
+            <Text style={styles.text}>Resource Efficiency</Text>
+
+          </TouchableOpacity>
+
+          <TouchableOpacity
+                    style={styles.button}
+
+          onPress={() => navigation.navigate("Water Conservation")}>
+            <Text style={styles.text}>Water Conservation</Text>
+
+          </TouchableOpacity>
+
+          <TouchableOpacity
+                    style={styles.button}
+
+          onPress={() => navigation.navigate("Finance Options")}>
+            <Text style={styles.text}>Finance Options</Text>
+
+          </TouchableOpacity>
+
     </View>
   )
 
@@ -143,22 +170,27 @@ function FinanaceOptions({navigation}){
 
 const Stack = createStackNavigator()
 
-export default function App() {
-  return (
-    <NavigationContainer>
-        <Stack.Navigator initialRouteName="Home">
-          <Stack.Screen name='Home' component={Home} />
-          <Stack.Screen name='My Planned Improvements' component={PlannedImprovements} />
-          <Stack.Screen name='Community' component={Community} />
-          <Stack.Screen name='Indoor Air Quality' component={IndoorAirQuality} />
-          <Stack.Screen name='Energy Efficiency' component={EnergryEfficiency} />
-          <Stack.Screen name='Resource Efficiency' component={ResourceEfficiency} />
-          <Stack.Screen name='Water Conservation' component={WaterConservation} />
-          <Stack.Screen name='Finance Options' component={FinanaceOptions} />
-        </Stack.Navigator>
-    </NavigationContainer>
+export default class App extends React.Component {
 
-  );
+  render() {
+    return (
+      <NavigationContainer>
+          <Stack.Navigator initialRouteName="Home">
+            <Stack.Screen name='Home' component={Home} />
+            <Stack.Screen name='My Planned Improvements' component={PlannedImprovements} />
+            <Stack.Screen name='Community' component={Community} />
+            <Stack.Screen name='Indoor Air Quality' component={IndoorAirQuality} />
+            <Stack.Screen name='Energy Efficiency' component={EnergryEfficiency} />
+            <Stack.Screen name='Resource Efficiency' component={ResourceEfficiency} />
+            <Stack.Screen name='Water Conservation' component={WaterConservation} />
+            <Stack.Screen name='Finance Options' component={FinanaceOptions} />
+          </Stack.Navigator>
+      </NavigationContainer>
+  
+    );
+
+  }
+
 }
 
 const styles = StyleSheet.create({
@@ -167,11 +199,20 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    paddingHorizontal: 10
 
   },
-  buttonContainer: {
-    margin: 10,
-    padding: 10,
+  button: {
+    alignItems: 'center',
+    backgroundColor: '#DDDDDD',
+    padding: 15,
+    margin: 2,
     width: '100%',
+    borderRadius: 10
+  },
+  text: {
+    fontSize: 19,
+    fontFamily: 'Roboto',
+    fontWeight: 'bold'
   }
 });
