@@ -5,27 +5,27 @@ import {
   View,
   Button,
   TouchableOpacity,
-  FlatList
+  FlatList,
 } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 
 function Home({ navigation }) {
   let data = [
-    { value: "My Planned Improvements" },
-    { value: "Community" },
-    { value: "Indoor Air Quality" },
-    { value: "Energy Efficiency" },
-    { value: "Resource Efficiency" },
-    { value: "Water Conservation" },
-    { value: "Finance Options" }
+    { key: "0", value: "My Planned Improvements" },
+    { key: "1", value: "Community" },
+    { key: "2", value: "Indoor Air Quality" },
+    { key: "3", value: "Energy Efficiency" },
+    { key: "4", value: "Resource Efficiency" },
+    { key: "5", value: "Water Conservation" },
+    { key: "6", value: "Finance Options" },
   ];
   return (
     <View style={styles.container}>
       <FlatList
         data={data}
         extraData={data}
-        keyExtractor={index => index.toString()}
+        keyExtractor={(item) => item.key}
         renderItem={({ item }) => renderOpacity(item, navigation)}
       />
     </View>
@@ -152,7 +152,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "flex-end",
     paddingHorizontal: 10,
-    marginBottom: 25
+    marginBottom: 25,
   },
   button: {
     flexDirection: "row",
@@ -162,12 +162,12 @@ const styles = StyleSheet.create({
     padding: 15,
     margin: 2,
     width: "100%",
-    borderRadius: 10
+    borderRadius: 10,
   },
   text: {
     fontSize: 19,
     fontFamily: "Roboto",
     fontWeight: "bold",
-    flexDirection: "row"
-  }
+    flexDirection: "row",
+  },
 });
