@@ -7,8 +7,9 @@ import PlannedMeasuresScreen from "./components/PlannedMeasuresScreen";
 import IndoorAirScreen from "./components/IndoorAirScreen";
 import CommunityScreen from "./components/CommunityScreen";
 import EnergyEfficiencyScreen from "./components/EnergyEfficiencyScreen";
-// import from "./components/
-// import IndoorAirScreen from "./components/
+import ProductDirectoryScreen from "./components/ProductDirectoryScreen";
+import WaterConservationScreen from "./components/WaterConservationScreen";
+import ResourceEfficiencyScreen from "./components/ResourceEfficiencyScreen";
 
 const AppNavigator = createStackNavigator({
   Home: {
@@ -19,6 +20,21 @@ const AppNavigator = createStackNavigator({
   },
   IndoorAir: {
     screen: IndoorAirScreen,
+  },
+  Community: {
+    screen: CommunityScreen,
+  },
+  EnergyEfficiency: {
+    screen: EnergyEfficiencyScreen,
+  },
+  ProductDirectory: {
+    screen: ProductDirectoryScreen,
+  },
+  WaterConservation: {
+    screen: WaterConservationScreen,
+  },
+  ResourceEfficiency: {
+    screen: ResourceEfficiencyScreen,
   },
 });
 

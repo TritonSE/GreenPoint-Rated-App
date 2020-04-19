@@ -21,7 +21,7 @@ let DATA = [
   { key: "IndoorAir", value: "Indoor Air Quality" },
   { key: "EnergyEfficiency", value: "Energy Efficiency" },
   { key: "WaterConservation", value: "Water Conservation" },
-  { key: "ResourceEfficiency", value: "ResourceE fficiency" },
+  { key: "ResourceEfficiency", value: "Resource Efficiency" },
   { key: "Community", value: "Community" },
 
   { key: "PlannedMeasures", value: "My Planned Measures" },

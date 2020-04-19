@@ -5,7 +5,7 @@ export default class ProductDirectoryScreen extends Component {
   render() {
     return (
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-        <Text>Indoor Air Quality</Text>
+        <Text>Product Directory</Text>
       </View>
     );
   }
