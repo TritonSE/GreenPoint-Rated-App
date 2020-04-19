@@ -5,7 +5,7 @@ export default class CommunityScreen extends Component {
   render() {
     return (
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-        <Text>Indoor Air Quality</Text>
+        <Text>Community</Text>
       </View>
     );
   }
