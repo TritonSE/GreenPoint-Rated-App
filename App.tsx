@@ -35,7 +35,7 @@ function Home({ navigation }) {
 function renderOpacity(item, navigation) {
   return (
     <TouchableOpacity
-      style={styles.button}
+      style={StyleSheet.flatten([styles.button, {backgroundColor: getColor(item)}])}
       onPress={() => navigation.navigate(item.value)}
     >
       <Text style={styles.text}>{item.value} </Text>
@@ -145,27 +145,44 @@ export default class App extends Component {
   }
 }
 
+getColor = (item) => {
+	switch(item.key) {
+		case "0":
+			return "#a8d7ed";
+		case "1":
+			return "#eeeecd";
+		case "2":
+			return "#d1e8e7";
+		case "3":
+			return "#dce4cd";
+		case "4":
+			return "#b8b8d7";
+		default:
+			return "#DDDDDD";
+	}
+}
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#f2f5ec",
     alignItems: "center",
     justifyContent: "flex-end",
-    paddingHorizontal: 10,
+    paddingHorizontal: 5,
     marginBottom: 25,
+    marginTop: 25,
   },
   button: {
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
-    backgroundColor: "#DDDDDD",
-    padding: 15,
-    margin: 2,
+    padding: 20,
+    margin: 10,
     width: "100%",
-    borderRadius: 10,
+    borderRadius: 5,
   },
   text: {
-    fontSize: 19,
+    fontSize: 17,
     fontFamily: "Roboto",
     fontWeight: "bold",
     flexDirection: "row",
