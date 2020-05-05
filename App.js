@@ -1,62 +1,51 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Text } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import Accordion from 'react-native-collapsible/Accordion';
 
-const SECTIONS = [
-  {
-    title: 'First',
-    content: 'Lorem ipsum...',
-  },
-  {
-    title: 'Second',
-    content: 'Lorem ipsum...',
-  },
-];
+export default class MyComponent extends React.Component {
+  constructor(props) {
+    super(props);
 
-export default class AccordionView extends Component {
-  state = {
-    activeSections: [],
-  };
+    this.state = {
+      sections: sections,
+      activeSections: [],
+    };
 
-  _renderSectionTitle = section => {
-    return (
-      <View style={styles.content}>
-        <Text>{section.content}</Text>
-      </View>
-    );
-  };
+    this.renderHeader = this.renderHeader.bind(this);
+    this.renderContent = this.renderContent.bind(this);
+    this.updateSections = this.updateSections.bind(this);
+  }
 
-  _renderHeader = section => {
+  updateSections(activeSections) {
+    this.setState({ activeSections });
+  }
+
+  renderHeader(section) {
     return (
       <View style={styles.header}>
-        <Text style={styles.headerText}>{section.title}</Text>
+        <Text style={styles.title}>{section.title}</Text>
       </View>
     );
-  };
+  }
 
-  _renderContent = section => {
+  renderContent(section) {
     return (
-      <View style={styles.content}>
+      <View>
         <Text>{section.content}</Text>
       </View>
     );
-  };
-
-  _updateSections = activeSections => {
-    this.setState({ activeSections });
-  };
+  }
 
   render() {
     return (
       <View>
         <Accordion
-          sections={SECTIONS}
+          sections={this.state.sections}
           activeSections={this.state.activeSections}
-          renderSectionTitle={this._renderSectionTitle}
-          renderHeader={this._renderHeader}
-          renderContent={this._renderContent}
-          onChange={this._updateSections}
-        />
+          renderHeader={this.renderHeader}
+          renderContent={this.renderContent}
+          onChange={this.updateSections}
+         />
       </View>
     );
   }
@@ -87,3 +76,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
 });
+
+const sections = [
+  {
+    title: 'First',
+    content: 'Lorem ipsum...',
+  },
+  {
+    title: 'Second',
+    content: 'Lorem ipsum...',
+  },
+];
