@@ -70,12 +70,17 @@ export default class Homescreen extends Component<Props> {
     const { navigation } = this.props;
     return (
       <View>
-        <FlatList
-          data={DATA}
-          extraData={DATA}
-          keyExtractor={(item) => item.key}
-          renderItem={({ item }) => this.renderOpacity(item, navigation)}
-        />
+        <View>
+          <CircularProgressBar></CircularProgressBar>
+        </View>
+        <View>
+          <FlatList
+            data={DATA}
+            extraData={DATA}
+            keyExtractor={(item) => item.key}
+            renderItem={({ item }) => this.renderOpacity(item, navigation)}
+          />
+        </View>
       </View>
     );
   }
