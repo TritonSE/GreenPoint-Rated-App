@@ -13,6 +13,8 @@ import {
   NavigationState,
 } from "react-navigation";
 
+import CircularProgressBar from "./CircularProgressBar";
+
 interface Props {
   navigation: NavigationScreenProp<NavigationState, NavigationParams>;
 }
@@ -33,15 +35,17 @@ let DATA = [
 export default class Homescreen extends Component<Props> {
   renderOpacity(item, navigation) {
     return (
-      <TouchableOpacity
-        style={StyleSheet.flatten([
-          styles.button,
-          { backgroundColor: this.getColor(item) },
-        ])}
-        onPress={() => navigation.navigate(item.key)}
-      >
-        <Text>{item.value} </Text>
-      </TouchableOpacity>
+      <View>
+        <TouchableOpacity
+          style={StyleSheet.flatten([
+            styles.button,
+            { backgroundColor: this.getColor(item) },
+          ])}
+          onPress={() => navigation.navigate(item.key)}
+        >
+          <Text>{item.value} </Text>
+        </TouchableOpacity>
+      </View>
     );
   }
 
