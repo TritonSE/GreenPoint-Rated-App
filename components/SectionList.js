@@ -89,11 +89,11 @@ const sections = [
   {
     title: 'First',
     content: 'Lorem ipsum...',
-    whichDetail: 'Detail 1'
+    whichDetail: 'First Detail'
   },
   {
     title: 'Second',
     content: 'Lorem ipsum...',
-    whichDetail: 'Detail 2'
+    whichDetail: 'Second Detail'
   },
 ];
