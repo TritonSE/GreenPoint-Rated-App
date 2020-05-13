@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import SectionList from "./components/SectionList";
-import Details from "./components/Details";
+import SectionList from "../components/SectionList";
+import Details from "../components/Details";
 
 const Stack = createStackNavigator();
 
-export default class MyComponent extends Component {
+export default class CategoryPage extends Component {
   render() {
     return (
       <NavigationContainer>
