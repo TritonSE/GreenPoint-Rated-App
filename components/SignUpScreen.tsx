@@ -10,7 +10,7 @@ import {
 
 import LoginDrawdown from "./LoginDrawdown";
 
-export default class LoginScreen extends Component {
+export default class SignUpScreen extends Component {
   login() {
     alert("Sumbitted");
   }
@@ -22,13 +22,12 @@ export default class LoginScreen extends Component {
         <TextInput placeholder="Username: " />
         <TextInput placeholder="Password: " />
 
-        <LoginDrawdown type="Login as..." />
+        <LoginDrawdown type="Sign-up as..." />
         <Button title="submit" onPress={() => this.login()}></Button>
-
         <View>
-          <Text>Don't have an account?</Text>
+          <Text>Already have an account?</Text>
           <TouchableOpacity>
-            <Text>Register Here</Text>
+            <Text>Login Here</Text>
           </TouchableOpacity>
         </View>
       </View>
