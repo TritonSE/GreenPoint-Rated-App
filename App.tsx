@@ -11,6 +11,8 @@ import ProductDirectoryScreen from "./components/ProductDirectoryScreen";
 import WaterConservationScreen from "./components/WaterConservationScreen";
 import ResourceEfficiencyScreen from "./components/ResourceEfficiencyScreen";
 
+import HomeAddressSL from "./components/HomeAddressSL";
+
 const AppNavigator = createStackNavigator({
   Home: {
     screen: HomeScreen,
@@ -42,6 +44,7 @@ const AppContainer = createAppContainer(AppNavigator);
 
 export default class App extends Component {
   render() {
-    return <AppContainer />;
+    //return <AppContainer />;
+    return <HomeAddressSL />
   }
 }
