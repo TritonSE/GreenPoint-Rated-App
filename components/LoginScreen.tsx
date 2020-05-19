@@ -31,9 +31,9 @@ export default class LoginScreen extends Component {
                 <Text style={styles.buttonText} onPress={() => this.login()}>LOGIN</Text>
             </TouchableOpacity>
             <View style={{flexDirection: 'row'}}>
-                <Text style={styles.basicText}>Already have an account?</Text>
+                <Text style={styles.basicText}>Don't have an account?</Text>
                 <TouchableOpacity>
-                    <Text style={styles.boldText}>Login Here</Text>
+                    <Text style={styles.boldText}>Register Here</Text>
                 </TouchableOpacity>
             </View>
         </View>
