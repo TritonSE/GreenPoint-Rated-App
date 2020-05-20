@@ -12,6 +12,7 @@ import WaterConservationScreen from "./components/WaterConservationScreen";
 import ResourceEfficiencyScreen from "./components/ResourceEfficiencyScreen";
 import LoginScreen from "./components/LoginScreen";
 import SignUpScreen from "./components/SignUpScreen";
+import LogRegContainer from "./components/LogRegContainer";
 
 const AppNavigator = createStackNavigator({
   Home: {
@@ -46,6 +47,7 @@ export default class App extends Component {
   render() {
     // return <AppContainer />;
     // return <LoginScreen />;
-    return <SignUpScreen />;
+    // return <SignUpScreen />;
+    return <LogRegContainer />;
   }
 }

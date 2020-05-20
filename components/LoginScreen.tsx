@@ -8,14 +8,25 @@ import {
   StyleSheet,
 } from "react-native";
 
+import {
+  NavigationParams,
+  NavigationScreenProp,
+  NavigationState,
+} from "react-navigation";
+
+interface Props {
+  navigation: NavigationScreenProp<NavigationState, NavigationParams>;
+}
+
 import LoginDrawdown from "./LoginDrawdown";
 
-export default class LoginScreen extends Component {
+export default class LoginScreen extends Component<Props> {
   login() {
     alert("Sumbitted");
   }
 
   render() {
+    const { navigation } = this.props;
     return (
       <View style={{ flex: 1, justifyContent: "center" }}>
         <Text>User Login</Text>
@@ -27,7 +38,7 @@ export default class LoginScreen extends Component {
 
         <View>
           <Text>Don't have an account?</Text>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate("SignUp")}>
             <Text>Register Here</Text>
           </TouchableOpacity>
         </View>

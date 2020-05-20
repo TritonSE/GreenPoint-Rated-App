@@ -8,17 +8,28 @@ import {
   StyleSheet,
 } from "react-native";
 
+import {
+  NavigationParams,
+  NavigationScreenProp,
+  NavigationState,
+} from "react-navigation";
+
+interface Props {
+  navigation: NavigationScreenProp<NavigationState, NavigationParams>;
+}
+
 import LoginDrawdown from "./LoginDrawdown";
 
-export default class SignUpScreen extends Component {
+export default class SignUpScreen extends Component<Props> {
   login() {
     alert("Sumbitted");
   }
 
   render() {
+    const { navigation } = this.props;
     return (
       <View style={{ flex: 1, justifyContent: "center" }}>
-        <Text>User Login</Text>
+        <Text>User Sign-Up</Text>
         <TextInput placeholder="Username: " />
         <TextInput placeholder="Password: " />
 
@@ -26,7 +37,7 @@ export default class SignUpScreen extends Component {
         <Button title="submit" onPress={() => this.login()}></Button>
         <View>
           <Text>Already have an account?</Text>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate("Login")}>
             <Text>Login Here</Text>
           </TouchableOpacity>
         </View>

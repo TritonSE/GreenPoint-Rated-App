@@ -7,6 +7,7 @@ import {
   FlatList,
   StyleSheet,
 } from "react-native";
+
 import {
   NavigationParams,
   NavigationScreenProp,
