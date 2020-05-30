@@ -26,15 +26,17 @@ export default class PropertyLoginScreen extends Component {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
+		flexDirection: "column",
 		backgroundColor: "white",
 		alignItems: "center",
 		justifyContent: "flex-start",
 		paddingHorizontal: 5,
-		marginBottom: 50,
-		marginTop: 150,
 	},
 	logo: {
-		marginLeft: '3%',
-		marginTop: '1%',
+	    marginRight: '3%',
+	    marginTop: '33%',
+	    marginBottom: '5%',
+	    height: '28%',
+	    width: '45%',
 	}
 });

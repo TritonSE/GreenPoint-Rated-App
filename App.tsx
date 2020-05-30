@@ -48,6 +48,6 @@ export default class App extends Component {
     // return <AppContainer />;
     // return <LoginScreen />;
     // return <SignUpScreen />;
-		return <PropertyLoginScreen />;
+	return <PropertyLoginScreen />;
   }
 }

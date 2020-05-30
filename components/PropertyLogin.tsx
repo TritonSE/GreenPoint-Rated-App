@@ -17,13 +17,13 @@ export default class PropertyLogin extends Component {
 					<TextInput style={styles.text} placeholder='Street Address' />
 				</View>
 				<View style={styles.rowContainer}>
-					<View style={styles.smallInputContainer}>
+					<View style={styles.cityInputContainer}>
 						<TextInput style={styles.text} placeholder='City' />
 					</View>
-					<View style={styles.smallInputContainer}>
+					<View style={styles.stInputContainer}>
 						<TextInput style={styles.text} placeholder='ST' />
 					</View>
-					<View style={styles.smallInputContainer}>
+					<View style={styles.zipInputContainer}>
 						<TextInput style={styles.text} placeholder='Zipcode' />
 					</View>
 				</View>
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		justifyContent: 'space-between',
 		width: '80%',
-		height: '25%',
+		height: '30%',
 		backgroundColor: 'white',
 	},
 	rowContainer: {
@@ -50,10 +50,12 @@ const styles = StyleSheet.create({
 		alignItems: 'center',
 		justifyContent: 'center',
 		width: '100%',
+		marginBottom: '4.5%',
 	},
  inputContainer: {
 		flex: 1,
 		marginTop: '4%',
+		marginBottom: '4.5%',
 		paddingTop: '1%',
 		position: 'relative',
 		width: '90%',
@@ -61,18 +63,46 @@ const styles = StyleSheet.create({
 		backgroundColor: 'white',
 		borderColor: '#878787',
 		borderWidth: 1.5,
-		borderRadius: 10,
+		borderRadius: 8,
 	},
-	smallInputContainer: {
+	cityInputContainer: {
+	    marginTop: '4%',
+        paddingTop: '1%',
+        position: 'relative',
+        width: '40%',
+        height: '100%',
+        backgroundColor: 'white',
+        borderColor: '#878787',
+        borderWidth: 1.5,
+        borderRadius: 6,
+        marginLeft: '2%',
+        marginRight: '2%',
+        },
+	stInputContainer: {
+	    marginTop: '4%',
+        paddingTop: '1%',
+        position: 'relative',
+        width: '20%',
+        height: '100%',
+        backgroundColor: 'white',
+        borderColor: '#878787',
+        borderWidth: 1.5,
+        borderRadius: 6,
+        marginLeft: '2%',
+        marginRight: '2%',
+        },
+	zipInputContainer: {
 		marginTop: '4%',
 		paddingTop: '1%',
 		position: 'relative',
-		width: '30%',
-		height: '80%',
+		width: '23%',
+		height: '100%',
 		backgroundColor: 'white',
 		borderColor: '#878787',
 		borderWidth: 1.5,
-		borderRadius: 10,
+		borderRadius: 6,
+        marginLeft: '2%',
+        marginRight: '2%',
 	},
 	buttonText: {
 		fontSize: 14,
