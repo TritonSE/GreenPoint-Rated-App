@@ -1,50 +1,27 @@
 import React, { Component } from "react";
-import { createStackNavigator } from "react-navigation-stack";
 import { createAppContainer } from "react-navigation";
 
-import HomeScreen from "./components/HomeScreen";
-import PlannedMeasuresScreen from "./components/PlannedMeasuresScreen";
-import IndoorAirScreen from "./components/IndoorAirScreen";
-import CommunityScreen from "./components/CommunityScreen";
-import EnergyEfficiencyScreen from "./components/EnergyEfficiencyScreen";
-import ProductDirectoryScreen from "./components/ProductDirectoryScreen";
-import WaterConservationScreen from "./components/WaterConservationScreen";
-import ResourceEfficiencyScreen from "./components/ResourceEfficiencyScreen";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
 
-import HomeAddressSL from "./components/HomeAddressSL";
+import HomeScreen from "./views/HomeScreen";
 
-const AppNavigator = createStackNavigator({
-  Home: {
-    screen: HomeScreen,
-  },
-  PlannedMeasures: {
-    screen: PlannedMeasuresScreen,
-  },
-  IndoorAir: {
-    screen: IndoorAirScreen,
-  },
-  Community: {
-    screen: CommunityScreen,
-  },
-  EnergyEfficiency: {
-    screen: EnergyEfficiencyScreen,
-  },
-  ProductDirectory: {
-    screen: ProductDirectoryScreen,
-  },
-  WaterConservation: {
-    screen: WaterConservationScreen,
-  },
-  ResourceEfficiency: {
-    screen: ResourceEfficiencyScreen,
-  },
-});
+import HomeAddressSL from "./views/HomeAddressSL";
+import DetailsScreen from "./views/DetailsScreen";
+import SectionList from "./views/SectionList";
 
-const AppContainer = createAppContainer(AppNavigator);
+const Stack = createStackNavigator();
 
 export default class App extends Component {
   render() {
-    //return <AppContainer />;
-    return <HomeAddressSL />
+    return (
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="Home Screen" component={HomeScreen} />
+          <Stack.Screen name="Section List" component={SectionList} />
+          <Stack.Screen name="Details" component={DetailsScreen} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    );
   }
 }
