@@ -7,11 +7,14 @@ import {
   FlatList,
   StyleSheet,
 } from "react-native";
+
 import {
   NavigationParams,
   NavigationScreenProp,
   NavigationState,
 } from "react-navigation";
+
+import CircularProgressBar from "./CircularProgressBar";
 
 interface Props {
   navigation: NavigationScreenProp<NavigationState, NavigationParams>;
@@ -33,15 +36,17 @@ let DATA = [
 export default class Homescreen extends Component<Props> {
   renderOpacity(item, navigation) {
     return (
-      <TouchableOpacity
-        style={StyleSheet.flatten([
-          styles.button,
-          { backgroundColor: this.getColor(item) },
-        ])}
-        onPress={() => navigation.navigate(item.key)}
-      >
-        <Text>{item.value} </Text>
-      </TouchableOpacity>
+      <View>
+        <TouchableOpacity
+          style={StyleSheet.flatten([
+            styles.button,
+            { backgroundColor: this.getColor(item) },
+          ])}
+          onPress={() => navigation.navigate(item.key)}
+        >
+          <Text>{item.value} </Text>
+        </TouchableOpacity>
+      </View>
     );
   }
 
@@ -66,12 +71,17 @@ export default class Homescreen extends Component<Props> {
     const { navigation } = this.props;
     return (
       <View>
-        <FlatList
-          data={DATA}
-          extraData={DATA}
-          keyExtractor={(item) => item.key}
-          renderItem={({ item }) => this.renderOpacity(item, navigation)}
-        />
+        <View>
+          <CircularProgressBar />
+        </View>
+        <View>
+          <FlatList
+            data={DATA}
+            extraData={DATA}
+            keyExtractor={(item) => item.key}
+            renderItem={({ item }) => this.renderOpacity(item, navigation)}
+          />
+        </View>
       </View>
     );
   }
