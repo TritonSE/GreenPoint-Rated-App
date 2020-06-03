@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { SectionList, Text, StyleSheet } from 'react-native';
+import { SectionList, Text, StyleSheet, Button } from 'react-native';
 
 const sections = [
   {
@@ -22,9 +22,10 @@ export default class HomeAddressSL extends Component {
 
   renderItem({item}) {
     return (
-      <Text style={styles.row}>
-        {item}
-      </Text>
+      <Button
+        style={styles.row}
+        title={item}
+      />
     )
   }
 
@@ -60,7 +61,7 @@ const styles = StyleSheet.create({
   },
   header: {
     padding: 15,
-    marginBottom: 5,
+    marginTop: 5,
     backgroundColor: 'steelblue',
     color: 'white',
     fontWeight: 'bold',
