@@ -1,54 +1,27 @@
 import React, { Component } from "react";
-import { createStackNavigator } from "react-navigation-stack";
 import { createAppContainer } from "react-navigation";
 
-import HomeScreen from "./components/HomeScreen";
-import PlannedMeasuresScreen from "./components/PlannedMeasuresScreen";
-import IndoorAirScreen from "./components/IndoorAirScreen";
-import CommunityScreen from "./components/CommunityScreen";
-import EnergyEfficiencyScreen from "./components/EnergyEfficiencyScreen";
-import ProductDirectoryScreen from "./components/ProductDirectoryScreen";
-import WaterConservationScreen from "./components/WaterConservationScreen";
-import ResourceEfficiencyScreen from "./components/ResourceEfficiencyScreen";
-import LoginScreen from "./components/LoginScreen";
-import SignUpScreen from "./components/SignUpScreen";
-import PropertyLoginScreen from "./components/PropertyLoginScreen";
-import LogRegContainer from "./components/LogRegContainer";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
 
-const AppNavigator = createStackNavigator({
-  Home: {
-    screen: HomeScreen,
-  },
-  PlannedMeasures: {
-    screen: PlannedMeasuresScreen,
-  },
-  IndoorAir: {
-    screen: IndoorAirScreen,
-  },
-  Community: {
-    screen: CommunityScreen,
-  },
-  EnergyEfficiency: {
-    screen: EnergyEfficiencyScreen,
-  },
-  ProductDirectory: {
-    screen: ProductDirectoryScreen,
-  },
-  WaterConservation: {
-    screen: WaterConservationScreen,
-  },
-  ResourceEfficiency: {
-    screen: ResourceEfficiencyScreen,
-  },
-});
+import HomeScreen from "./views/HomeScreen";
 
-const AppContainer = createAppContainer(AppNavigator);
+import HomeAddressSL from "./views/HomeAddressSL";
+import DetailsScreen from "./views/DetailsScreen";
+import SectionList from "./views/SectionList";
+
+const Stack = createStackNavigator();
 
 export default class App extends Component {
   render() {
-    // return <AppContainer />;
-    // return <LoginScreen />;
-    // return <SignUpScreen />;
-	return <PropertyLoginScreen />;
+    return (
+      <NavigationContainer>
+        <Stack.Navigator>
+          <Stack.Screen name="Home Screen" component={HomeScreen} />
+          <Stack.Screen name="Section List" component={SectionList} />
+          <Stack.Screen name="Details" component={DetailsScreen} />
+        </Stack.Navigator>
+      </NavigationContainer>
+    );
   }
 }

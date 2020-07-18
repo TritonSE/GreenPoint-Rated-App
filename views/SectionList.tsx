@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { Button, StyleSheet, Text, View } from 'react-native';
-import Accordion from 'react-native-collapsible/Accordion';
+import React, { Component } from "react";
+import { Button, StyleSheet, Text, View } from "react-native";
+import Accordion from "react-native-collapsible/Accordion";
 
 export default class SectionList extends Component {
   constructor(props) {
@@ -35,8 +35,8 @@ export default class SectionList extends Component {
           title={section.content}
           color="#841584"
           onPress={() => {
-            this.props.navigation.navigate('Details', {
-              whichDetail: section.whichDetail
+            this.props.navigation.navigate("Details", {
+              whichDetail: section.whichDetail,
             });
           }}
         />
@@ -53,7 +53,7 @@ export default class SectionList extends Component {
           renderHeader={this.renderHeader}
           renderContent={this.renderContent}
           onChange={this.updateSections}
-         />
+        />
       </View>
     );
   }
@@ -61,39 +61,49 @@ export default class SectionList extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 50
+    marginTop: 50,
   },
   title: {
-    textAlign: 'center',
+    textAlign: "center",
     fontSize: 22,
-    fontWeight: '300',
+    fontWeight: "300",
     marginBottom: 20,
-    marginTop: 20
+    marginTop: 20,
   },
   header: {
-    backgroundColor: '#F5FCFF',
+    backgroundColor: "#F5FCFF",
     padding: 10,
   },
   headerText: {
-    textAlign: 'center',
+    textAlign: "center",
     fontSize: 16,
-    fontWeight: '500',
+    fontWeight: "500",
   },
   content: {
     padding: 20,
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
   },
 });
 
 const sections = [
   {
-    title: 'First',
-    content: 'Lorem ipsum...',
-    whichDetail: 'First Detail'
+    title: "First",
+    content: "Lorem ipsum...",
+    whichDetail: "First Detail",
   },
   {
-    title: 'Second',
-    content: 'Lorem ipsum...',
-    whichDetail: 'Second Detail'
+    title: "Second",
+    content: "Lorem ipsum...",
+    whichDetail: "Second Detail",
+  },
+  {
+    title: "Third",
+    content: "Lorem ipsum...",
+    whichDetail: "Third Detail",
+  },
+  {
+    title: "Fourth",
+    content: "Lorem ipsum...",
+    whichDetail: "Fourth Detail",
   },
 ];

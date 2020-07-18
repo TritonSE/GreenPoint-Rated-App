@@ -8,17 +8,7 @@ import {
   StyleSheet,
 } from "react-native";
 
-import {
-  NavigationParams,
-  NavigationScreenProp,
-  NavigationState,
-} from "react-navigation";
-
-import CircularProgressBar from "./CircularProgressBar";
-
-interface Props {
-  navigation: NavigationScreenProp<NavigationState, NavigationParams>;
-}
+import CircularProgressBar from "../components/CircularProgressBar";
 
 let DATA = [
   { key: "IndoorAir", value: "Indoor Air Quality" },
@@ -26,15 +16,17 @@ let DATA = [
   { key: "WaterConservation", value: "Water Conservation" },
   { key: "ResourceEfficiency", value: "Resource Efficiency" },
   { key: "Community", value: "Community" },
-
   { key: "PlannedMeasures", value: "My Planned Measures" },
   { key: "ProductDirectory", value: "Product Directory" },
-
-  //   { key: "FinanceOptions", value: "FinanceOptions" },
 ];
 
-export default class Homescreen extends Component<Props> {
-  renderOpacity(item, navigation) {
+export default class Homescreen extends Component {
+  constructor(props) {
+    super(props);
+
+    this.renderOpacity = this.renderOpacity.bind(this);
+  }
+  renderOpacity(item) {
     return (
       <View>
         <TouchableOpacity
@@ -42,7 +34,11 @@ export default class Homescreen extends Component<Props> {
             styles.button,
             { backgroundColor: this.getColor(item) },
           ])}
-          onPress={() => navigation.navigate(item.key)}
+          onPress={() => {
+            this.props.navigation.navigate("Section List", {
+              title: item.value,
+            });
+          }}
         >
           <Text>{item.value} </Text>
         </TouchableOpacity>
@@ -68,7 +64,6 @@ export default class Homescreen extends Component<Props> {
   };
 
   render() {
-    const { navigation } = this.props;
     return (
       <View>
         <View>
@@ -79,7 +74,7 @@ export default class Homescreen extends Component<Props> {
             data={DATA}
             extraData={DATA}
             keyExtractor={(item) => item.key}
-            renderItem={({ item }) => this.renderOpacity(item, navigation)}
+            renderItem={({ item }) => this.renderOpacity(item)}
           />
         </View>
       </View>
