@@ -16,7 +16,6 @@ let DATA = [
   { key: "WaterConservation", value: "Water Conservation" },
   { key: "ResourceEfficiency", value: "Resource Efficiency" },
   { key: "Community", value: "Community" },
-
   { key: "PlannedMeasures", value: "My Planned Measures" },
   { key: "ProductDirectory", value: "Product Directory" },
 ];
